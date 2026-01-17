@@ -1,25 +1,24 @@
 Sentiment Analysis Web Application
-Overview
+1. Project Overview
 
-This repository contains an end-to-end Sentiment Analysis web application that classifies input text as Positive or Negative using a supervised machine learning model.
-The system is designed with clear separation between model training, backend inference API, and frontend UI, following standard ML system design practices.
+This repository implements an end-to-end Sentiment Analysis web application that classifies text as Positive or Negative using a supervised machine learning model.
 
-The project demonstrates practical ML deployment, not just experimentation.
+The project demonstrates model training, API-based inference, and frontend integration in a clean, modular architecture suitable for real-world ML systems.
 
-Key Features
+2. Key Capabilities
 
-Supervised sentiment classification using TF-IDF features
+Binary sentiment classification
 
-RESTful inference API built with FastAPI
+TF-IDF based text feature extraction
 
-Lightweight frontend for real-time predictions
+REST API for model inference
 
-Modular, maintainable project structure
+Browser-based frontend interface
 
-Ready for local development and extension
+Modular and maintainable codebase
 
-Tech Stack
-Backend
+3. Technology Stack
+3.1 Backend
 
 Python 3
 
@@ -27,17 +26,17 @@ FastAPI
 
 scikit-learn
 
-joblib
-
 Uvicorn
 
-Machine Learning
+joblib
+
+3.2 Machine Learning
 
 TF-IDF Vectorizer
 
-Supervised text classification model
+Supervised classification model
 
-Frontend
+3.3 Frontend
 
 HTML
 
@@ -45,46 +44,46 @@ CSS
 
 JavaScript (Fetch API)
 
-Tooling
+3.4 Tooling
 
 Git
 
 GitHub
 
-Project Structure
+4. Repository Structure
 sentiment-analysis/
-│
 ├── backend/
-│   ├── app.py                # FastAPI inference service
-│   ├── train.py              # Model training pipeline
+│   ├── app.py
+│   ├── train.py
 │   └── model/
 │       └── sentiment_model.pkl
 │
 ├── frontend/
-│   ├── index.html             # UI entry point
-│   ├── style.css              # Styling
-│   └── script.js              # API integration logic
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
 │
 ├── notebooks/
-│   └── exploration.ipynb      # Data analysis & experiments
+│   └── exploration.ipynb
 │
-├── .gitignore
 ├── requirements.txt
+├── .gitignore
 └── README.md
 
-Dataset
+5. Dataset
+5.1 Description
 
-Dataset: Sentiment140 (Twitter sentiment dataset)
+Name: Sentiment140
 
-Size: ~1.6 million labeled tweets
+Size: ~1.6M tweets
 
 Labels: Positive / Negative
 
-Source
+5.2 Source
 
-The dataset is not committed to the repository.
+Dataset is intentionally excluded from version control.
 
-Download manually from:
+Download from:
 
 Kaggle: Sentiment140 Dataset
 
@@ -92,100 +91,96 @@ Expected path:
 
 backend/data/training.1600000.processed.noemoticon.csv
 
-Model Training
+6. Model Training
 
-To train the sentiment classifier locally:
+Run the training pipeline:
 
 python backend/train.py
 
 
-This will generate the trained model artifact:
+Generated artifact:
 
 backend/model/sentiment_model.pkl
 
 
 Observed accuracy during experimentation: ~0.79
-(Exact performance may vary depending on preprocessing and split.)
 
-Backend Setup
-Create virtual environment
+7. Backend Setup and Execution
+7.1 Environment Setup
 python -m venv venv
 
 
 Activate:
 
-venv\Scripts\activate     # Windows
-source venv/bin/activate  # macOS/Linux
+venv\Scripts\activate      # Windows
+source venv/bin/activate   # macOS/Linux
 
-Install dependencies
+7.2 Dependency Installation
 pip install -r requirements.txt
 
-Run API server
+7.3 Start API Server
 uvicorn backend.app:app --reload
 
-API Reference
-Endpoint
+
+Swagger UI:
+
+http://127.0.0.1:8000/docs
+
+8. API Specification
+8.1 Endpoint
 
 POST /predict
 
-Request
+8.2 Request
 {
   "text": "I love this product"
 }
 
-Response
+8.3 Response
 {
   "sentiment": "Positive"
 }
 
-API Documentation
+9. Frontend Usage
 
-Swagger UI available at:
+Open frontend/index.html using Live Server
 
-http://127.0.0.1:8000/docs
-
-Frontend Usage
-
-Open frontend/index.html using Live Server (VS Code recommended)
-
-Enter text in the input field
+Enter text input
 
 Click Analyze
 
-Sentiment result is displayed instantly
+View sentiment output
 
-The frontend communicates with the backend via POST /predict.
+Frontend communicates with the backend via HTTP.
 
-CORS
+10. CORS Configuration
 
-CORS middleware is enabled in FastAPI to support browser-based frontend requests during development.
+CORS middleware is enabled in FastAPI to allow browser-origin requests during development and deployment.
 
-Repository Practices
+11. Version Control Practices
 
 Virtual environments excluded
 
 Dataset excluded
 
-Model artifact tracked (small size)
+Model artifact tracked
 
-Clear directory boundaries
+Clean, readable commit history
 
-GitHub-ready structure
+12. Project Status
 
-Current Status
+Model trained
 
-Model training completed
-
-API functional
+API operational
 
 Frontend integrated
 
-Local deployment verified
+Ready for deployment
 
-Author
+13. Author
 
 Jesmitha K
-BTech Computer Science Graduate
+BTech Computer Science 
 
 Focus areas:
 
@@ -193,4 +188,4 @@ Machine Learning systems
 
 Backend API development
 
-End-to-end project delivery
+Full-stack integration
