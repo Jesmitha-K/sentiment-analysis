@@ -1,0 +1,175 @@
+/* =========================
+   CSS RESET + BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+:root {
+  --bg-light: #f4f6fb;
+  --bg-dark: #0f172a;
+  --card-light: #ffffff;
+  --card-dark: #111827;
+  --text-light: #1f2933;
+  --text-dark: #e5e7eb;
+  --primary: #6366f1;
+  --positive: #16a34a;
+  --negative: #dc2626;
+  --border-radius: 14px;
+  --transition: 0.3s ease;
+}
+
+/* =========================
+   BODY THEMES
+========================= */
+body {
+  min-height: 100vh;
+  background: var(--bg-light);
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* Dark mode toggle */
+.toggle-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  color: white;
+  font-size: 0.85rem;
+}
+
+/* =========================
+   MAIN CARD
+========================= */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.card {
+  background: var(--card-light);
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  transition: var(--transition);
+}
+
+body.dark .card {
+  background: var(--card-dark);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.card h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  color: var(--primary);
+}
+
+/* =========================
+   INPUT + BUTTON
+========================= */
+textarea {
+  width: 100%;
+  height: 120px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  resize: none;
+  font-size: 0.95rem;
+}
+
+body.dark textarea {
+  background: #020617;
+  border: 1px solid #334155;
+  color: var(--text-dark);
+}
+
+button.analyze-btn {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 12px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+button.analyze-btn:hover {
+  opacity: 0.9;
+}
+
+/* =========================
+   RESULT
+========================= */
+.result {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.result.positive {
+  color: var(--positive);
+}
+
+.result.negative {
+  color: var(--negative);
+}
+
+/* Icons */
+.result span {
+  font-size: 1.6rem;
+  margin-left: 8px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  text-align: center;
+  padding: 0.8rem;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+body.dark footer {
+  color: #64748b;
+}
