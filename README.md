@@ -176,6 +176,11 @@ API operational
 Frontend integrated
 
 Ready for deployment
+## Live Demo
+
+Frontend (Vercel): [https://sentiment-analysis-no2a-juuejnkfa-jesmitha07-3076s-projects.vercel.app/](https://sentiment-analysis-no2a-juuejnkfa-jesmitha07-3076s-projects.vercel.app/)  
+Backend (Render): [https://sentiment-analysis-3-04uy.onrender.com](https://sentiment-analysis-3-04uy.onrender.com)
+
 
 13. Author
 
