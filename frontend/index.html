@@ -48,11 +48,12 @@
         return;
       }
 
-      const res = await fetch("http://127.0.0.1:8000/predict", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text })
-      });
+      const res = await fetch("https://sentiment-analysis-3-04uy.onrender.com/predict", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ text })
+});
+
 
       const data = await res.json();
 
