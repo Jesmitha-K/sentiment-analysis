@@ -1,7 +1,7 @@
 async function analyze() {
   const text = document.getElementById("text").value;
 
-  const res = await fetch("http://127.0.0.1:8000/predict", {
+  const res = await fetch("hhttps://sentiment-analysis-wsvt.onrender.com/predict", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ text })
